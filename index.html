@@ -11,32 +11,42 @@
     <meta name="author" content="" />
 
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
   </head>
 
   <body>
-    <!-- Place your content here -->
+
 
     <h1>SE 3316 Lab 1</h1>
 
-    <p>Hello World!</p>
+    <h3>Pokedex</h3>
 
-    <input type="number" placeholder="number"/>
-   
-    <input type="text" placeholder="text"/>
+    <div id="searchContainer">
+      <input id="numVal" type="number" placeholder="e.g 12" />
+      <button type="button" onclick="numSearch()">Search by Number...</button>
+    </div>
 
-    <input type="search" placeholder="search"/>
+    <div id="searchContainer">
+      <input id="nameVal" type="text" placeholder="e.g Pikachu" />
+      <button type="button" onclick="nameSearch()">Search by Name...</button>
+    </div>
 
-    <ul>
-      <li>
-        
-      </li>
-    </ul>
-    
+    <div id="pokemon"></div>
 
-    <!-- Embedded JavaScript go here -->
-    <script>
-
-    </script>
+    <script type="text/javascript" src="scripts.js"></script>
   </body>
+  <footer>
+    <h4>References</h4>
+  
+       <p> <a href="https://www.kaggle.com/kvpratama/pokemon-images-dataset">Pokemon Images</a> </p>
+      
+   
+   <p>   <a href="https://www.reddit.com/r/TheSilphRoad/comments/7p952h/pokemon_go_pokedex_spreadsheet/">Pokemon Details</a> </p>
+  
+  </footer>
 </html>
