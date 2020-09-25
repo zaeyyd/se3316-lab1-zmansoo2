@@ -29,24 +29,63 @@ function makeList(critera) {
 
   listContainer.appendChild(listElement);
 
+  results = 0
+
   for (pokemon of pokemons) {
     let name = pokemon["name"];
     let number = pokemon["number"];
+    let type = pokemon["type"];
+console.log(name,number, type)
+    if(critera ){
+      if (name.toLowerCase().includes(critera) || String(number).includes(String(critera)) && results < 5) {
+        console.log("yeah")
 
-    if (name.includes(critera) || String(number).includes(String(critera))) {
+
+        listItem = document.createElement("li");
+  
+        PokeName = document.createElement("p");
+        PokeNumber = document.createElement("p");
+        PokeType = document.createElement("p");
+  
+        PokeName.innerHTML = name;
+        PokeNumber.innerHTML = number;
+        PokeType.innerHTML = type;
+  
+        listItem.appendChild(PokeName);
+        listItem.appendChild(PokeNumber);
+        listItem.appendChild(PokeType);
+  
+        listElement.appendChild(listItem);
+
+        results = results + 1
+  
+  
+    
+      }
+    }
+    else{
       listItem = document.createElement("li");
-
+  
       PokeName = document.createElement("p");
       PokeNumber = document.createElement("p");
+      PokeType = document.createElement("p");
 
       PokeName.innerHTML = name;
       PokeNumber.innerHTML = number;
+      PokeType.innerHTML = type;
 
       listItem.appendChild(PokeName);
       listItem.appendChild(PokeNumber);
+      listItem.appendChild(PokeType);
 
       listElement.appendChild(listItem);
     }
+
+
+
+   
+
+    // alert(popup)
   }
 }
 
@@ -68,7 +107,7 @@ function numSearch() {
 }
 
 function nameSearch() {
-  let name = document.getElementById("nameVal").value;
+  let name = document.getElementById("nameVal").value.toLowerCase()
 
   let letters = /^[a-zA-Z]*$/;
 
