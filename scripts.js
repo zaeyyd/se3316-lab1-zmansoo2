@@ -22,11 +22,22 @@ function makeList(critera) {
   ];
 
   listContainer = document.createElement("div");
-  listContainer.id = "results";
+
   listElement = document.createElement("ul");
+  
+  
 
-  document.getElementById("pokemon").appendChild(listContainer);
+  if(critera){
+    console.log('yuh')
+    listContainer.id = "results";
+    document.getElementById("popup").appendChild(listContainer);
+    
+  }
+  else{
+    document.getElementById("pokemon").appendChild(listContainer);
+  }
 
+  
   listContainer.appendChild(listElement);
 
   results = 0;
@@ -67,7 +78,6 @@ function makeList(critera) {
       listElement.appendChild(listItem);
     }
 
-    // alert(popup)
   }
 }
 
@@ -83,7 +93,12 @@ function numSearch() {
     alert("Please Select Pokemon 1 - 20");
   } else {
     console.log(num);
-    document.getElementById("results").remove();
+    try{
+      document.getElementById("results").remove();
+    }
+    catch(err){
+      console.log(err)
+    }
     makeList(num);
   }
 }
@@ -97,7 +112,13 @@ function nameSearch() {
     alert("Only Letters and Max Name Character Length is 20 ");
   } else {
     console.log(name);
-    document.getElementById("results").remove();
+    try{
+      document.getElementById("results").remove();
+    }
+    catch(err){
+      console.log(err)
+    }
+    
     makeList(name);
   }
 }
