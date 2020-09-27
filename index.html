@@ -9,8 +9,10 @@
     <meta name="description" content="" />
 
     <meta name="author" content="" />
-
+    
+    <!-- STYLES -->
     <link rel="stylesheet" href="styles.css" />
+  
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -18,58 +20,101 @@
       crossorigin="anonymous"
     />
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <!-- SCRIPTS FOR MODEL FUNCTIONALITY-->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+      integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+      integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
-
-
     <h1>SE 3316 Lab 1</h1>
 
     <h3>Pokedex</h3>
 
-    <div  id="searchContainer">
+    <div id="searchContainer">
       <input id="numVal" type="number" placeholder="e.g 12" />
-      <button type="button" onclick="numSearch()" data-toggle="modal" data-target="#exampleModal">Search by Number...</button>
+      <button
+        type="button"
+        onclick="numSearch()"
+        data-toggle="modal"
+        data-target="#Modal"
+      >
+        Search by Number...
+      </button>
     </div>
 
     <div id="searchContainer">
       <input id="nameVal" type="text" placeholder="e.g Pikachu" />
-      <button type="button" onclick="nameSearch()" data-toggle="modal" data-target="#exampleModal">Search by Name...</button>
+      <button
+        type="button"
+        onclick="nameSearch()"
+        data-toggle="modal"
+        data-target="#Modal"
+      >
+        Search by Name...
+      </button>
     </div>
 
-<div  id="pokemon"></div>
+    <div id="pokemon"></div>
 
+    <div
+      class="modal fade"
+      id="Modal"
+      tabindex="3"
+      role="dialog"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="ModalLabel">Search Results</h5>
+          </div>
 
+          <div id="popup"></div>
 
-<div class="modal fade" id="exampleModal" tabindex="3" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Search Results</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div id='popup' ></div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
+    <!-- LINK TO SCRIPT FILE -->
     <script type="text/javascript" src="scripts.js"></script>
   </body>
   <footer>
     <h4>References</h4>
-  
-       <p> <a href="https://www.kaggle.com/kvpratama/pokemon-images-dataset">Pokemon Images</a> </p>
-      
-   
-   <p>   <a href="https://www.reddit.com/r/TheSilphRoad/comments/7p952h/pokemon_go_pokedex_spreadsheet/">Pokemon Details</a> </p>
-  
+
+    <p>
+      <a href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"
+        >Pokemon Images</a
+      >
+    </p>
+
+    <p>
+      <a
+        href="https://www.reddit.com/r/TheSilphRoad/comments/7p952h/pokemon_go_pokedex_spreadsheet/"
+        >Pokemon Details</a
+      >
+    </p>
   </footer>
 </html>
