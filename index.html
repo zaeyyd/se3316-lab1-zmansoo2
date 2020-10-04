@@ -28,23 +28,12 @@
     <h3>Pokedex</h3>
 
     <div id="searchContainer">
-      <input id="numVal" type="number" placeholder="e.g 12" />
-      <button
-        type="button"
-        onclick="numSearch()"
-      >
-        Search by Number...
-      </button>
+      <input id="numVal" type="number" placeholder="e.g 12" onkeyup="numSearch()" />
+     
     </div>
 
     <div id="searchContainer">
-      <input id="nameVal" type="text" placeholder="e.g Pikachu" />
-      <button
-        type="button"
-        onclick="nameSearch()"
-      >
-        Search by Name...
-      </button>
+      <input id="nameVal" type="text" placeholder="e.g Pikachu" onkeyup="nameSearch()"/>
     </div>
 
     <div id="pokemon"></div>
