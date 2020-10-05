@@ -105,7 +105,7 @@ function makeList(critera) {
     if (critera) {
       if (
         name.toLowerCase().includes(critera) ||
-        (String(number).includes(String(critera)) && results < 5)
+        (String(number).includes(String(critera)))
       ) {
         listElement.appendChild(listItem);
 
