@@ -45,7 +45,7 @@ function makeList(critera) {
     let name = `${pokemon["name"]}`;
     let number = `#${pokemon["number"]}`;
     let type = `${pokemon["type"]} Type`;
-    let imgPath = `pokemon/${pokemon["number"]}.png`;
+    let imgPath = `../pokemon/${pokemon["number"]}.png`;
 
     listItem = document.createElement("li");
 
