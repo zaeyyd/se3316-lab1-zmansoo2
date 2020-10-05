@@ -22,6 +22,8 @@ let pokemons = [
   { number: 20, name: "Raticate", type: "Normal" },
 ];
 
+fullListMade = false
+
 function makeList(critera) {
   listContainer = document.createElement("div");
 
@@ -31,8 +33,10 @@ function makeList(critera) {
     listElement.id = "resultList";
     listContainer.id = "results";
     document.getElementById("pokemon").prepend(listContainer);
-  } else {
+  } else if(!fullListMade) {
     document.getElementById("pokemon").appendChild(listContainer);
+    fullListMade = true
+
   }
 
   listContainer.appendChild(listElement);
@@ -41,7 +45,7 @@ function makeList(critera) {
     let name = `${pokemon["name"]}`;
     let number = `#${pokemon["number"]}`;
     let type = `${pokemon["type"]} Type`;
-    let imgPath = `../pokemon/${pokemon["number"]}.png`;
+    let imgPath = `pokemon/${pokemon["number"]}.png`;
 
     listItem = document.createElement("li");
 
