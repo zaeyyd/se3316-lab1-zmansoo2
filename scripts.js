@@ -67,11 +67,15 @@ function makeList(critera) {
   listElement = document.createElement("ul");
 
   if (critera) {
+
     listElement.id = "resultList"
     listContainer.id = "results";
     document.getElementById("pokemon").prepend(listContainer);
+
   } else {
+
     document.getElementById("pokemon").appendChild(listContainer);
+
   }
 
   listContainer.appendChild(listElement);
@@ -124,9 +128,10 @@ function numSearch() {
   } catch (err) {
     console.log(err);
   }
+  console.log(num)
 
   //input validation
-  if (num < 20 || num > 0 || !num) {
+  if ((num < 20 && num > 0) == true || !num) {
     makeList(num);
   } else {
     alert("Please Select Pokemon 1 - 20")
@@ -146,7 +151,7 @@ function nameSearch() {
     console.log(err);
   }
 
-  if (name.match(letters) || name.length <= 20) {
+  if (name.match(letters) && name.length <= 20) {
     makeList(name);
   } 
   else {
