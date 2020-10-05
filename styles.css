@@ -20,7 +20,11 @@ li{
     background-color: rgb(168, 255, 180);
 }
 
-#searchContainer{
+#numSearchContainer{
+    margin: 10px;
+}
+
+#nameSearchContainer{
     margin: 10px;
 }
 
