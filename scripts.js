@@ -88,7 +88,7 @@ function numSearch() {
   console.log(num);
 
   //input validation
-  if ((num < 20 && num > 0) == true || !num) {
+  if ((num <= 20 && num > 0) == true || !num) {
     makeList(num);
   } else {
     alert("Please Select Pokemon 1 - 20");
