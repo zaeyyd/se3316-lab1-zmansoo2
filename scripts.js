@@ -1,40 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // // pokemon data
 let pokemons = [
   { number: 1, name: "Bulbasaur", type: "Grass" },
@@ -56,37 +19,29 @@ let pokemons = [
   { number: 17, name: "Pidgeotto", type: "Normal" },
   { number: 18, name: "Pidgeot", type: "Normal" },
   { number: 19, name: "Rattata", type: "Normal" },
-  { number: 20, name: "Raticate", type: "Normal" }
+  { number: 20, name: "Raticate", type: "Normal" },
 ];
 
 function makeList(critera) {
-  
-
   listContainer = document.createElement("div");
 
   listElement = document.createElement("ul");
 
   if (critera) {
-
-    listElement.id = "resultList"
+    listElement.id = "resultList";
     listContainer.id = "results";
     document.getElementById("pokemon").prepend(listContainer);
-
   } else {
-
     document.getElementById("pokemon").appendChild(listContainer);
-
   }
 
   listContainer.appendChild(listElement);
-
-  results = 0;
 
   for (pokemon of pokemons) {
     let name = `${pokemon["name"]}`;
     let number = `#${pokemon["number"]}`;
     let type = `${pokemon["type"]} Type`;
-    let imgPath = `pokemon/${pokemon["number"]}.png`;
+    let imgPath = `../pokemon/${pokemon["number"]}.png`;
 
     listItem = document.createElement("li");
 
@@ -94,8 +49,8 @@ function makeList(critera) {
     PokeType = document.createElement("p");
     PokeImg = document.createElement("img");
 
-    PokeName.appendChild(document.createTextNode(`${number + " " + name}`))
-    PokeType.appendChild(document.createTextNode(`${type}`))
+    PokeName.appendChild(document.createTextNode(`${number + " " + name}`));
+    PokeType.appendChild(document.createTextNode(`${type}`));
     PokeImg.src = imgPath;
 
     listItem.appendChild(PokeName);
@@ -105,11 +60,10 @@ function makeList(critera) {
     if (critera) {
       if (
         name.toLowerCase().includes(critera) ||
-        (String(number).includes(String(critera)))
+        String(number).includes(String(critera))
       ) {
         listElement.appendChild(listItem);
 
-        results = results + 1;
       }
     } else {
       listElement.appendChild(listItem);
@@ -121,25 +75,23 @@ function makeList(critera) {
 function numSearch() {
   let num = document.getElementById("numVal").value;
 
-
   //clean up previous results
   try {
     document.getElementById("results").remove();
   } catch (err) {
     console.log(err);
   }
-  console.log(num)
+  console.log(num);
 
   //input validation
   if ((num < 20 && num > 0) == true || !num) {
     makeList(num);
   } else {
-    alert("Please Select Pokemon 1 - 20")
+    alert("Please Select Pokemon 1 - 20");
   }
 }
 
 function nameSearch() {
-  console.log('yo')
   let name = document.getElementById("nameVal").value.toLowerCase();
 
   let letters = /^[a-zA-Z]*$/;
@@ -153,17 +105,13 @@ function nameSearch() {
 
   if (name.match(letters) && name.length <= 20) {
     makeList(name);
-  } 
-  else {
-    alert("Only Letters and Max Name Character Length is 20")
+  } else {
+    alert("Only Letters and Max Name Character Length is 20");
   }
 }
-
 
 document.getElementById("numVal").addEventListener("keyup", numSearch);
 document.getElementById("nameVal").addEventListener("keyup", nameSearch);
 
 // First Render
 makeList("");
-
-
