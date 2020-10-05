@@ -160,8 +160,10 @@ function nameSearch() {
 }
 
 
+document.getElementById("numVal").addEventListener("keyup", numSearch);
+document.getElementById("nameVal").addEventListener("keyup", nameSearch);
+
 // First Render
 makeList("");
-
 
 
